@@ -2,8 +2,9 @@
   "name": "vehicle-allocation-node",
   "version": "1.0.0",
   "description": "Sistema de gerenciamento de frotas em Node.js. Desenvolvido como projeto acadêmico de Engenharia de Software, unindo o levantamento de requisitos funcionais com a construção de uma API estruturada em equipe.",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,8 @@
   },
   "homepage": "https://github.com/gusttagarcia/vehicle-allocation-node#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "pg": "^8.21.0"
   }
 }

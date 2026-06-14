@@ -1,0 +1,42 @@
+### 1. Listar todos os veículos (GET)
+GET http://localhost:3000/veiculos
+Accept: application/json
+
+###
+
+### 2. Buscar veículo pelo ID (GET) -
+GET http://localhost:3000/veiculos/1
+Accept: application/json
+
+###
+
+### 3. Cadastrar um novo veículo (POST)
+POST http://localhost:3000/veiculos
+Content-Type: application/json
+
+{
+  "placa": "XYZ-9999",
+  "marca": "Honda",
+  "modelo": "Civic",
+  "ano": 2023,
+  "disponivel": true
+}
+
+###
+
+### 4. Atualizar um veículo existente (PUT) -
+PUT http://localhost:3000/veiculos/1
+Content-Type: application/json
+
+{
+  "placa": "ABC-1234",
+  "marca": "Toyota",
+  "modelo": "Corolla Cross",
+  "ano": 2024,
+  "disponivel": false
+}
+
+###
+
+### 5. Deletar um veículo (DELETE) -
+DELETE http://localhost:3000/veiculos/1
