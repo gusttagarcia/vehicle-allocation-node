@@ -94,6 +94,12 @@ async function salvarVeiculo() {
     const metodo = id ? 'PUT' : 'POST';
     const url = id ? `/veiculos/${id}` : '/veiculos';
 
+    // validaçao
+    if (!veiculo.placa || !veiculo.marca || !veiculo.modelo || !veiculo.ano) {
+        alert("Por favor, preencha todos os campos obrigatórios.");
+        return;
+    }
+
     try {
         await fetch(url, {
             method: metodo,
