@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/gusttagarcia/vehicle-allocation-node/issues"
   },
-  "homepage": "https://github.com/gusttagarcia/vehicle-allocation-node#readme"
+  "homepage": "https://github.com/gusttagarcia/vehicle-allocation-node#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
