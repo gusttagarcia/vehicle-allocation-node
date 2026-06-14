@@ -8,6 +8,8 @@ const veiculosRoutes = require('./routes/veiculosRoutes');
 
 app.use(express.json());
 
+app.use(express.static('public'));
+
 // 2. Avisa o servidor: "URL que comece com /veiculos, vai para esse arquivo"
 app.use('/veiculos', veiculosRoutes);
 

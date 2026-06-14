@@ -5,7 +5,7 @@ Accept: application/json
 ###
 
 ### 2. Buscar veículo pelo ID (GET) -
-GET http://localhost:3000/veiculos/1
+GET http://localhost:3000/veiculos/2
 Accept: application/json
 
 ###
