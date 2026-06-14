@@ -1,2 +1,2 @@
 # vehicle-allocation-node
-Sistema de gerenciamento de frotas em Node.js. Desenvolvido como projeto acadêmico de Engenharia de Software, unindo o levantamento de requisitos funcionais com a construção de uma API estruturada em equipe.
+Fleet management system in Node.js. Developed as an academic project in Software Engineering, combining the gathering of functional requirements with the construction of a structured API as a team.
