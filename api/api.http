@@ -5,7 +5,7 @@ Accept: application/json
 ###
 
 ### 2. Buscar veículo pelo ID (GET) -
-GET http://localhost:3000/veiculos/2
+GET http://localhost:3000/veiculos/6
 Accept: application/json
 
 ###
@@ -39,4 +39,4 @@ Content-Type: application/json
 ###
 
 ### 5. Deletar um veículo (DELETE) -
-DELETE http://localhost:3000/veiculos/1
+DELETE http://localhost:3000/veiculos/2

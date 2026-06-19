@@ -1,67 +1,134 @@
-#  Sistema de Controle de Frota (Alocação de Veículos)
+# 🚗 Sistema de Controle de Frota
 
 ![Status](https://img.shields.io/badge/Status-MVP_Concluído-success?style=for-the-badge)
-![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?style=for-the-badge&logo=nodedotjs)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-Frontend-7952B3?style=for-the-badge&logo=bootstrap)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-##  Sobre o Projeto
-Este é o MVP (Minimum Viable Product) de um Sistema de Alocação de Veículos. A aplicação foi desenvolvida utilizando a arquitetura **MVC (Model-View-Controller)**.
+## 📋 Sobre o Projeto
 
-O sistema permite o gerenciamento completo da frota através de uma interface web conectada a uma API RESTful.
+MVP de um **Sistema de Alocação de Veículos** desenvolvido com arquitetura **MVC (Model-View-Controller)**. A aplicação oferece uma interface web para gerenciamento completo de frota, conectada a uma API RESTful.
 
-##  Funcionalidades 
-- **C**reate: Cadastro de novos veículos na frota.
-- **R**ead: Listagem dinâmica de todos os veículos cadastrados.
-- **U**pdate: Atualização de dados e status de disponibilidade (Disponível/Alugado).
-- **D**elete: Remoção segura de registros do banco de dados.
+> Projeto acadêmico de Engenharia de Software — unindo levantamento de requisitos funcionais com a construção de uma API estruturada em equipe.
 
-##  Arquitetura do Projeto
+---
 
-O projeto foi estruturado separando a inteligência de negócios (Backend) da interface visual (Frontend):
+## ✅ Funcionalidades
 
-```text
+| Operação | Descrição |
+|----------|-----------|
+| **Create** | Cadastro de novos veículos na frota |
+| **Read** | Listagem dinâmica de todos os veículos cadastrados |
+| **Update** | Atualização de dados e status (Disponível / Alugado) |
+| **Delete** | Remoção segura de registros do banco de dados |
+
+---
+
+## 🗂️ Arquitetura do Projeto
+
+```
 vehicle-allocation-node/
-├── public/                 # Frontend (Arquivos Estáticos)
-│   ├── index.html          # Interface principal (Layout com Bootstrap)
-│   └── js/
-│       └── veiculos.js     # Lógica do front (Fetch API e Modais)
-├── src/                    # Backend (Código Fonte Node.js)
+├── public/                         # Frontend (Arquivos Estáticos)
+│   ├── index.html                  # Interface principal (Bootstrap)
+│   └── front/
+│       └── veiculos.js             # Lógica do front (Fetch API e Modais)
+├── src/                            # Backend (Node.js)
 │   ├── config/
-│   │   └── database.js     # Conexão com o PostgreSQL
+│   │   └── database.js             # Conexão com o PostgreSQL
 │   ├── controllers/
-│   │   └── veiculosController.js # Lógica de requisição/resposta
+│   │   └── veiculosController.js   # Lógica de requisição/resposta
 │   ├── models/
-│   │   └── veiculoModel.js # Comunicação direta com o banco (Queries SQL)
+│   │   └── veiculoModel.js         # Queries SQL
 │   ├── routes/
-│   │   └── veiculosRoutes.js # Mapeamento das URLs (Endpoints)
-│   └── server.js           # Ponto de entrada do servidor Express
-├── api.http                # Testes de rota nativos do WebStorm
-├── package.json            # Dependências do Node.js
-└── README.md               # Documentação do projeto
+│   │   └── veiculosRoutes.js       # Mapeamento dos endpoints
+│   └── server.js                   # Ponto de entrada do servidor Express
+├── api/
+│   └── api.http                    # Testes de rota 
+├── package.json
+└── README.md
+```
 
-## ⚙️ Como executar o projeto na sua máquina
+---
+
+## 🔌 Endpoints da API
+
+Base URL: `http://localhost:3000`
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| `GET` | `/veiculos` | Lista todos os veículos |
+| `GET` | `/veiculos/:id` | Busca um veículo pelo ID |
+| `POST` | `/veiculos` | Cadastra um novo veículo |
+| `PUT` | `/veiculos/:id` | Atualiza um veículo existente |
+| `DELETE` | `/veiculos/:id` | Remove um veículo |
+
+---
+
+## 🚀 Como Executar o Projeto
 
 ### Pré-requisitos
-Antes de começar, você precisará ter instalado em sua máquina o [Git](https://git-scm.com), o [Node.js](https://nodejs.org/en/) e o [PostgreSQL](https://www.postgresql.org/).
+
+Antes de começar, certifique-se de ter instalado:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) (v18 ou superior)
+- [PostgreSQL](https://www.postgresql.org/)
 
 ### Passo a Passo
 
-1. Clone o repositório:
+**1. Clone o repositório**
+```bash
+git clone https://github.com/gusttagarcia/vehicle-allocation-node.git
+cd vehicle-allocation-node
+```
 
-git clone [https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git)
-cd NOME_DO_REPOSITORIO
-
-2. Instale as dependências do projeto:
-
+**2. Instale as dependências**
+```bash
 npm install
+```
 
-3. Configure o Banco de Dados:
+**3. Configure as variáveis de ambiente**
 
-Abre o PostgreSQL esteja com o seu .env imbutido com suas credencias de acesso ao banco.
+Crie um arquivo `.env` na raiz do projeto com base no exemplo abaixo:
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=sua_senha
+DB_NAME=veiculos
+```
 
-4. Incie o servidor:
+**4. Configure o Banco de Dados**
 
+Execute o script SQL para criar as tabelas:
+```bash
+psql -U postgres -f veiculos.sql
+```
+
+**5. Inicie o servidor**
+```bash
 npm start
+```
 
-5. Acesse o navegador através do local host
+**6. Acesse no navegador**
+```
+http://localhost:3000
+```
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **[Node.js](https://nodejs.org/)** — Ambiente de execução JavaScript
+- **[Express](https://expressjs.com/)** — Framework para criação da API REST
+- **[PostgreSQL](https://www.postgresql.org/)** — Banco de dados relacional
+- **[node-postgres (pg)](https://node-postgres.com/)** — Driver de conexão com o PostgreSQL
+- **[dotenv](https://github.com/motdotla/dotenv)** — Gerenciamento de variáveis de ambiente
+- **[Bootstrap 5](https://getbootstrap.com/)** — Estilização da interface web
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença **ISC**. Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
